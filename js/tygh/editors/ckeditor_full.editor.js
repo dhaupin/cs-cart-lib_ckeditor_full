@@ -20,11 +20,8 @@
                 
             if (!this.params) {
                 this.params = {
-                    //toolbar: [['Format','Font','FontSize', 'Bold','Italic','Underline','TextColor','BGColor','-','Link','Image','Table','-','NumberedList','BulletedList','Indent','Outdent','JustifyLeft','JustifyCenter','JustifyRight','-','Source']],
                     bodyClass: 'wysiwyg-content',
                     filebrowserBrowseUrl : _.current_location + '/js/lib/elfinder/elfinder.ckeditor.html',
-                    filebrowserWindowWidth : '600',
-                    filebrowserWindowHeight : '500',
                     allowedContent : true
                 };
 
