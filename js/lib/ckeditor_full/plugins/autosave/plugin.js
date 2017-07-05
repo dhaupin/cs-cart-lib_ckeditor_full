@@ -14,6 +14,17 @@
         requires: 'notification',
         version: "0.18.0",
         init: function (editor) {
+
+			var trimmed_url = window.location.href,
+				ignore_querystrings = [
+				'selected_section',
+				'switch_company_id'
+				]
+
+			$(ignore_querystrings).each(function() { 
+				trimmed_url = fn_removeUrlParam(this, null, trimmed_url);
+			});
+			
             // Default Config
             var defaultConfig = {
                 delay: 10,
@@ -21,7 +32,7 @@
                 saveDetectionSelectors: "a[href^='javascript:__doPostBack'][id*='Save'],a[id*='Cancel']",
                 saveOnDestroy: false,
                 NotOlderThen: 1440,
-                SaveKey: 'autosave_' + window.location + "_" + $('#' + editor.name).attr('name'),
+                SaveKey: 'autosave | ' + trimmed_url + ' | ' + $('#' + editor.name).attr('name'),
                 diffType: "sideBySide",
                 autoLoad: false
             };
@@ -347,4 +358,37 @@
         }
         return quotaExceeded;
     }
+	
+	// Querystring mitigator - Quick and dirty paste
+	// From - https://stackoverflow.com/a/11654436/2418655
+	function fn_removeUrlParam(key, value, url) {
+		if (!url) url = window.location.href;
+		var re = new RegExp("([?&])" + key + "=.*?(&|#|$)(.*)", "gi"),
+			hash;
+
+		if (re.test(url)) {
+			if (typeof value !== 'undefined' && value !== null) {
+				return url.replace(re, '$1' + key + "=" + value + '$2$3');
+			} else {
+				hash = url.split('#');
+				url = hash[0].replace(re, '$1$3').replace(/(&|\?)$/, '');
+				if (typeof hash[1] !== 'undefined' && hash[1] !== null) {
+					url += '#' + hash[1];
+				}
+				return url;
+			}
+		} else {
+			if (typeof value !== 'undefined' && value !== null) {
+				var separator = url.indexOf('?') !== -1 ? '&' : '?';
+				hash = url.split('#');
+				url = hash[0] + separator + key + '=' + value;
+				if (typeof hash[1] !== 'undefined' && hash[1] !== null) {
+					url += '#' + hash[1];
+				}
+				return url;
+			} else {
+				return url;
+			}
+		}
+	}	
 })();
