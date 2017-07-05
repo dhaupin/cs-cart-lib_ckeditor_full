@@ -26,8 +26,8 @@ CKEDITOR.editorConfig = function(config) {
     ];
 
     // Load Plugins
-    config.extraPlugins = 'autolink,autosave,bidi,ckawesome,codemirror,colorbutton,colordialog,div,embed,embedbase,emojione,find,font,iframe,justify,letterspacing,lineutils,notification,notificationaggregator,qrc,scribens,selectall,showblocks,sourcedialog,textselection,uicolor,widget,widgetselection';
-    config.removePlugins = 'bidi,div,uicolor,showblocks'; // bugs out
+    config.extraPlugins = 'autolink,autosave,ckawesome,codemirror,colorbutton,colordialog,embed,embedbase,emojione,find,font,iframe,justify,letterspacing,lineutils,notification,notificationaggregator,qrc,scribens,selectall,sourcedialog,textselection,widget,widgetselection';
+    config.removePlugins = 'bidi,div,embed,embedbase,uicolor,showblocks,widget'; // bugs out, not sure why embed + widget causes click error
     
     // Interface
     //config.removeDialogTabs = 'image:advanced;link:advanced';
