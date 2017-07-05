@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <addon scheme="2.0" edition_type="ROOT,ULT:VENDOR">
 	<id>lib_ckeditor_full</id>
-	<version>1.0</version>
+	<version>1.1</version>
 	<default_language>en</default_language>
 	<name>Library - WYSIWYG CKEditor Full</name>
 	<description>Adds an updated and extended CKEditor. Includes plugins such as autosave, codemirror, fontawesome, &amp; more. Note: Active/disable will not work, so you must uninstall this addon to disable ckeditor_full (will fall back to no editor in All Stores > Settings > Appearance).</description>
