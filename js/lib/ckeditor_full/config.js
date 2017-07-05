@@ -73,13 +73,13 @@ CKEDITOR.editorConfig = function(config) {
     
     // Autosave
    config.autosave = {
-        delay: 8,
+        delay: 10,
         NotOlderThen: 1440,
         autoLoad: false,
         saveOnDestroy: false,
         messageType: 'statusbar',
         diffType: "sideBySide",
-        saveDetectionSelectors: '.cm-submit, input[name="dispatch[addons.update]"], input[name="dispatch[product_options.update]"], input[name="dispatch[product_features.update]"]',
+        saveDetectionSelectors: '.cm-submit, input[name="dispatch[addons.update]"], input[name="dispatch[product_options.update]"], input[name="dispatch[product_features.update]"], input[name="dispatch[block_manager.update_block]"]',
         saveKeyPrefix: 'autosave',
         saveKeyIgnoreParams: ['selected_section', 'switch_company_id', 'come_from', ,'cc', ,'ctpl', 'gclid'],
         saveKeyIgnoreProtocol: true,
