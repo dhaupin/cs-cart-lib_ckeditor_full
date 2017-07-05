@@ -73,14 +73,14 @@ CKEDITOR.editorConfig = function(config) {
     
     // Autosave
    config.autosave = {
-        delay: 3,
+        delay: 8,
         NotOlderThen: 1440,
         autoLoad: false,
         saveOnDestroy: false,
         messageType: 'statusbar',
         diffType: "sideBySide",
         saveDetectionSelectors: '.cm-submit, input[name="dispatch[addons.update]"], input[name="dispatch[product_options.update]"], input[name="dispatch[product_features.update]"]',
-        saveKeyPrefix: 'wysiwyg-save',
+        saveKeyPrefix: 'autosave',
         saveKeyIgnoreParams: ['selected_section', 'switch_company_id', 'come_from', ,'cc', ,'ctpl', 'gclid'],
         saveKeyIgnoreProtocol: true,
         saveKeyDelimiter: ' | ',
