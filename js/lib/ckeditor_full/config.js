@@ -3,7 +3,6 @@
  * For licensing, see LICENSE.md or http://ckeditor.com/license
  */
 
- 
 // Allow empty tags
 $.each(CKEDITOR.dtd.$removeEmpty, function (i, value) {
     CKEDITOR.dtd.$removeEmpty[i] = false;
@@ -11,8 +10,6 @@ $.each(CKEDITOR.dtd.$removeEmpty, function (i, value) {
 
 // Begin Configs
 CKEDITOR.editorConfig = function(config) {
-    
-    // Toolbars for this package from sample at admin/view/javascript/ckeditor/samples/plugins/toolbar/toolbar.html
     config.toolbar = [
         { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source', '-', 'autoFormat', 'CommentSelectedRange', 'UncommentSelectedRange', 'AutoComplete' ] },
         { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Undo', 'Redo', '-', 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', 'SelectAll' ] },
@@ -54,8 +51,7 @@ CKEDITOR.editorConfig = function(config) {
     config.ignoreEmptyParagraph = true;
     config.removeFormatAttributes = true;
 
-    // Stylezzz
-    //config.skin = 'moonocolor';
+    // Styles
     config.uiColor = '#f5f5f5';
     config.dialog_backgroundCoverColor = '#000000';
     config.dialog_backgroundCoverOpacity = 0.5;
