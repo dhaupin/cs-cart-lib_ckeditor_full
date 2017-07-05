@@ -29,7 +29,7 @@ CKEDITOR.editorConfig = function(config) {
 	];
 
 	// Load Plugins
-	config.extraPlugins = 'autolink,autosave,bidi,ckawesome,codemirror,colorbutton,colordialog,div,embed,embedbase,emojione,find,font,iframe,justify,letterspacing,lineutils,notification,notificationaggregator,qrc,scribens,selectall,showblocks,sourcedialog,textselection,uicolor,widget,widgetselection,plugin_wrapper';
+	config.extraPlugins = 'autolink,autosave,bidi,ckawesome,codemirror,colorbutton,colordialog,div,embed,embedbase,emojione,find,font,iframe,justify,letterspacing,lineutils,notification,notificationaggregator,qrc,scribens,selectall,showblocks,sourcedialog,textselection,uicolor,widget,widgetselection';
 	config.removePlugins = 'bidi,div,uicolor,showblocks'; // bugs out
 	
 	// Interface
@@ -72,7 +72,9 @@ CKEDITOR.editorConfig = function(config) {
 	config.fontawesomePath = '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css';
 	
 	// Autosave
-	config.autosave = {};
+	config.autosave = {
+		saveDetectionSelectors: '.cm-submit'
+	};
 	
 	// Codemirror
 	config.codemirror = {
@@ -87,7 +89,7 @@ CKEDITOR.editorConfig = function(config) {
 	};
 };
 
-
+/*
 CKEDITOR.plugins.add('plugin_wrapper', {
 	init: function (editor) {
 		var trimmed_url = window.location.href,
@@ -141,3 +143,4 @@ function fn_removeUrlParam(key, value, url) {
 		}
 	}
 }
+*/
