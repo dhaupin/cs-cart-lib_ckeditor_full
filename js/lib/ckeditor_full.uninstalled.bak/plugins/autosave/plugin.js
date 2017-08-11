@@ -46,9 +46,10 @@
             // Extend CKEDITOR config and lang  - config also available at loadPlugin()
             var config = CKEDITOR.tools.extend(defaultConfig, editor.config.autosave || {}, true);
 
-            if (editor.plugins.textselection && config.messageType == "statusbar") {
+            // https://github.com/w8tcha/CKEditor-AutoSave-Plugin/issues/89
+            /*if (editor.plugins.textselection && config.messageType == "statusbar") {
                 config.messageType = "notification";
-            }
+            }*/
 
             CKEDITOR.document.appendStyleSheet(CKEDITOR.getUrl(CKEDITOR.plugins.getPath('autosave') + 'css/autosave.min.css'));
 
@@ -286,9 +287,10 @@
         } else {
             var messageType = config.messageType != null ? config.messageType : "notification";
 
-            if (editorInstance.plugins.textselection && messageType == "statusbar") {
+            // https://github.com/w8tcha/CKEditor-AutoSave-Plugin/issues/89
+            /*if (editorInstance.plugins.textselection && messageType == "statusbar") {
                 messageType = "notification";
-            }
+            }*/
 
             if (messageType == "statusbar") {
                 var autoSaveMessage = document.getElementById(autoSaveMessageId(editorInstance));
